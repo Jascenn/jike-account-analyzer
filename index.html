@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即刻账号分析工具</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>即刻账号分析工具</h1>
+            <p>分析自媒体博主内容，筛选您感兴趣的话题</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <form id="analyzer-form">
+                    <div class="form-group">
+                        <label for="account-url">博主账号链接：</label>
+                        <input type="text" id="account-url" name="account-url" placeholder="请输入即刻博主的账号链接" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="keywords">关键词筛选：</label>
+                        <input type="text" id="keywords" name="keywords" placeholder="输入关键词，多个关键词请用逗号分隔">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" id="analyze-btn">开始分析</button>
+                        <button type="button" id="clear-btn">清空结果</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="loading-section" id="loading-section">
+                <div class="loader"></div>
+                <p>正在分析中，请稍候...</p>
+            </section>
+
+            <section class="result-section" id="result-section">
+                <h2>分析结果</h2>
+                <div class="account-info" id="account-info">
+                    <!-- 账号信息将在这里显示 -->
+                </div>
+                <div class="new-content-notification" id="new-content-notification" style="display: none;">
+                    <p>发现<span id="new-content-count">0</span>条新内容！</p>
+                    <button id="sync-to-feishu" class="btn">同步到飞书多维表格</button>
+                </div>
+                
+                <div class="filter-options">
+                    <label>
+                        <input type="checkbox" id="only-show-filtered" checked>
+                        只显示筛选结果
+                    </label>
+                    <select id="sort-option">
+                        <option value="time-desc">时间降序（最新）</option>
+                        <option value="time-asc">时间升序（最早）</option>
+                        <option value="likes-desc">点赞数降序</option>
+                        <option value="comments-desc">评论数降序</option>
+                    </select>
+                </div>
+                
+                <div class="content-list" id="content-list">
+                    <!-- 内容列表将在这里显示 -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2023 即刻账号分析工具 | 本工具仅用于学习和研究</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
