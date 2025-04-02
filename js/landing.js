@@ -2,7 +2,16 @@
  * 即刻账号分析工具 - 产品介绍页面脚本
  */
 
+// 在DOMContentLoaded事件监听器中添加
 document.addEventListener('DOMContentLoaded', () => {
+    // 显示加载动画
+    document.body.classList.add('loading');
+    
+    // 初始化完成后隐藏加载动画
+    setTimeout(() => {
+        document.body.classList.remove('loading');
+    }, 500);
+    
     // 初始化FAQ折叠面板
     initFaqAccordion();
     
