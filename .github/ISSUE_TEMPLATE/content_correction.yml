@@ -1,0 +1,22 @@
+name: Content correction
+description: Suggest a correction to the demo copy or documentation
+title: "docs: "
+labels:
+  - documentation
+body:
+  - type: textarea
+    id: current
+    attributes:
+      label: Current content
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Suggested correction
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
